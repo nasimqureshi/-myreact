@@ -2,19 +2,27 @@
 import './App.css';
 
 function App() {
-  const name = "Nasim Qureshi";
-  const age = 69;
-  const email = "qureshi.nasim2yahoo.com"
-  const user = (
-    {name},
-    {age},
-    {email}
-  );
+ 
   return (
     <div className="App">
-    {user}   
+    <User name="Nasim" age={69} email="qureshi.nasim@yahoo.com" />   
+    <User name="Qamar" age={64} email="qureshi.nasim@yahoo.com" />   
+    <User name="Samreen" age={41} email="qureshi.nasim@yahoo.com" />   
+      
     </div>
   );
+}
+
+const User = (props) => {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <h1>{props.age}</h1>
+      <h1>{props.email}</h1>
+    </div>
+    
+    
+  )
 }
 
 export default App;
