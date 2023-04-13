@@ -1,13 +1,30 @@
 
 import './App.css';
 
+// function App() {
+//   const age= 19;
+//   return (
+//     <div className='App'>
+//       {age >= 20 ? <h1>Over age</h1> : <h1>Under Age</h1>}
+//       <h1 style={{color: "blue"}}>Hi Nasim</h1>
+//     </div>
+//   );
+// }
 function App() {
-  const age= 19;
+  const names = ['Nasim','Qamar','Samreen','Hira','Nida','Sana'];
+
   return (
     <div className='App'>
-      {age >= 20 ? <h1>Over age</h1> : <h1>Under Age</h1>}
+      {names.map((name, key) => {
+        return (
+          <h1 key={key}> {name} </h1>
+        )
+      })}
     </div>
-  );
+  )
+
+ 
+}
 
   
  
@@ -20,7 +37,7 @@ function App() {
   //   </div>
     
   // );
-}
+
 
 // const User = (props) => {
 //   return (
