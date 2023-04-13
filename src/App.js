@@ -1,5 +1,6 @@
 
 import './App.css';
+import { useState } from 'react';
 
 // function App() {
 //   const age= 19;
@@ -10,21 +11,21 @@ import './App.css';
 //     </div>
 //   );
 // }
-function App() {
-  const names = ['Nasim','Qamar','Samreen','Hira','Nida','Sana'];
+// function App() {
+//   const names = ['Nasim','Qamar','Samreen','Hira','Nida','Sana'];
 
-  return (
-    <div className='App'>
-      {names.map((name, key) => {
-        return (
-          <h1 key={key}> {name} </h1>
-        )
-      })}
-    </div>
-  )
+//   return (
+//     <div className='App'>
+//       {names.map((name, key) => {
+//         return (
+// //           <h1 key={key}> {name} </h1>
+// //         )
+// //       })}
+// //     </div>
+// //   )
 
  
-}
+// }
 
   
  
@@ -61,5 +62,22 @@ function App() {
 //     </div>
 //   )
 // }
+
+
+// COUNTER
+
+function App(){
+  const [age, setAge] = useState(0)
+  
+  const increaseAge = () => {
+    setAge(age + 1);
+  };
+  return (
+    <div className='App'>
+      {age}
+      <button onClick={increaseAge}> Increase Age </button>
+    </div>
+  );
+}
 
 export default App;
