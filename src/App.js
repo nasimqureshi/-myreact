@@ -97,18 +97,62 @@ import { useState } from 'react';
 // )
 // }
 // Another example of useState.
+// function App() {
+//   const [showText, setShowText] = useState(true);
+
+//   return (
+//     <div className='App'>
+//     <button onClick={() => {
+//       setShowText(!showText)
+//     }}> Show / Hide </button>
+    
+//     {showText  && <h1> Nasim </h1>}
+//     </div>
+//   );
+// }
+
+// Another example of useState by changing color of the text
+
+
+// function App() {
+//   const [textColor, setTextColor] = useState("blue");
+
+//   return (
+//     <div className='App'>
+//     <button onClick={() => {
+//       setTextColor(textColor ==="blue" ? "red" : "blue")
+//     }}> Show / Hide </button>
+    
+//     <h1 style={{ color: textColor }}> Nasim </h1>
+//     </div>
+//   );
+// }
+
+/////////// Counter Exercise//////////
+
 function App() {
-  const [showText, setShowText] = useState(true);
+  const [count, setCount] = useState(0);
+
+  const increase =() => {
+    setCount(count + 1)
+  }
+  const decrease = () => {
+    setCount(count - 1)
+  }
+  const setToZero = () => {
+    setCount(0)
+  }
 
   return (
     <div className='App'>
-    <button onClick={() => {
-      setShowText(!showText)
-    }}> Show / Hide </button>
-    
-    {showText === true && <h1> Nasim </h1>}
+      <button onClick={increase}> Increase </button>
+      <button onClick={decrease}> Decrease </button>
+      <button onClick={setToZero}> Set to Zero</button>
+
+      {count}
     </div>
   );
 }
+
 
 export default App;
