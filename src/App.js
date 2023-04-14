@@ -66,16 +66,47 @@ import { useState } from 'react';
 
 // COUNTER
 
-function App(){
-  const [age, setAge] = useState(0)
+// function App(){
+//   const [age, setAge] = useState(0)
   
-  const increaseAge = () => {
-    setAge(age + 1);
-  };
+//   const increaseAge = () => {
+//     setAge(age + 1);
+//   };
+//   return (
+//     <div className='App'>
+//       {age}
+//       <button onClick={increaseAge}> Increase Age </button>
+//     </div>
+//   );
+// }
+
+// Another Exemple of Hook
+
+// function App() {
+//   const [inputValue, setInputValue] = useState("");
+
+//   const handelInputChange = (event) => {
+//     setInputValue(event.target.value);
+//   }
+
+// return(
+//   <div className='App'>
+//     <input type='text' onChange={handelInputChange} />
+//     {inputValue}
+//   </div>
+// )
+// }
+// Another example of useState.
+function App() {
+  const [showText, setShowText] = useState(true);
+
   return (
     <div className='App'>
-      {age}
-      <button onClick={increaseAge}> Increase Age </button>
+    <button onClick={() => {
+      setShowText(!showText)
+    }}> Show / Hide </button>
+    
+    {showText === true && <h1> Nasim </h1>}
     </div>
   );
 }
