@@ -144,12 +144,15 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='App'><br></br>
       <button onClick={increase}> Increase </button>
+      <br></br>
+      <br></br>
       <button onClick={decrease}> Decrease </button>
+      <br></br><br></br>
       <button onClick={setToZero}> Set to Zero</button>
-
-      {count}
+      <br></br>
+      <h1>{count}</h1>
     </div>
   );
 }
