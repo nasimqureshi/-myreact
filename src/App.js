@@ -1,6 +1,13 @@
 
 import './App.css';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import { Home } from './pages/Home'
+import { Menu } from './pages/Menu'
+import { Contact } from './pages/Contact'
+import { Navbar } from './pages/Navbar';
+
+
 
 // function App() {
 //   const age= 19;
@@ -130,32 +137,65 @@ import { useState } from 'react';
 
 /////////// Counter Exercise//////////
 
-function App() {
-  const [count, setCount] = useState(0);
+// function App() {
+//   const [count, setCount] = useState(0);
 
-  const increase =() => {
-    setCount(count + 1)
-  }
-  const decrease = () => {
-    setCount(count - 1)
-  }
-  const setToZero = () => {
-    setCount(0)
-  }
+//   const increase =() => {
+//     setCount(count + 1)
+//   }
+//   const decrease = () => {
+//     setCount(count - 1)
+//   }
+//   const setToZero = () => {
+//     setCount(0)
+//   }
 
+//   return (
+//     <div className='App'><br></br>
+//       <button onClick={increase}> Increase </button>
+//       <br></br>
+//       <br></br>
+//       <button onClick={decrease}> Decrease </button>
+//       <br></br><br></br>
+//       <button onClick={setToZero}> Set to Zero</button>
+//       <br></br>
+//       <h1>{count}</h1>
+//     </div>
+//   );
+// }
+
+///////////////// Component Lifecycle /////////////////////////\\
+// function App(){
+ 
+//   const [text, setText] = useState("");
+  
+//   return (
+//     <div>
+//       <input
+//       onChange={(event) => {
+//         setText(event.target.value);
+//       }} />
+//       <h1> {text} </h1>
+//     </div>
+//   )
+// }
+
+
+function App(){
   return (
-    <div className='App'><br></br>
-      <button onClick={increase}> Increase </button>
-      <br></br>
-      <br></br>
-      <button onClick={decrease}> Decrease </button>
-      <br></br><br></br>
-      <button onClick={setToZero}> Set to Zero</button>
-      <br></br>
-      <h1>{count}</h1>
+    <div className="App">
+      <Router>
+        <Navbar>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<h1>Page not found</h1>} />
+          </Routes>
+        </Navbar>
+      </Router>
     </div>
-  );
+  )
 }
-
 
 export default App;
